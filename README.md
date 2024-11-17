@@ -40,8 +40,8 @@ A real-time chat application that supports text and image messaging. It includes
  Step 1: Clone the Repository 🖥️
 
 
-git clone https://github.com/your-username/realtime-chat-app.git
-cd realtime-chat-app
+git clone https://github.com/Mayuradlak123/Real-Time-Chat-Application.git
+cd Real-Time-Chat-Application
 
 
 ---
