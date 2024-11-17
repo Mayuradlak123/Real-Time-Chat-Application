@@ -1,3 +1,6 @@
+
+
+
  Real-Time Chat Application 📱💬
 
 A real-time chat application that supports text and image messaging. It includes user authentication, a responsive UI, and real-time communication using Socket.IO and Node.js. Users can send text and images, which are automatically resized to 200x200 pixels for a consistent chat experience.
@@ -148,4 +151,24 @@ io.on('connection', (socket) => {
     console.log('User disconnected:', socket.id);
   });
 });
+
+
+
+
+![image](https://github.com/user-attachments/assets/c37ef362-6bca-439b-83ee-679fe48d2537)
+Message Encryption 
+![image](https://github.com/user-attachments/assets/58c53556-71c0-4214-a1a2-fa78655fdc7c)
+
+
+Message Decryption and Image Upload functionality 
+
+![image](https://github.com/user-attachments/assets/d09d9d48-4870-4ed7-a648-3144ab0a54d9)
+
+
+Login Page 
+![image](https://github.com/user-attachments/assets/0f63e970-8630-4646-a967-a3ad8caa1a1b)
+
+SignUp Page
+
+![image](https://github.com/user-attachments/assets/d53abc9c-47b2-405c-b1a1-6cbd3bdc9122)
 
