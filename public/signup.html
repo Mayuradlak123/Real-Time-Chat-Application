@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    input {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Signup</h2>
+    <input type="email" id="username" placeholder="Email">
+    <input type="text" id="name" placeholder="Name">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signup()">Signup</button>
+    <p>Already have an account? <a href="/login.html">Login</a></p>
+  </div>
+  <script>
+    function signup() {
+      const username = document.getElementById('username').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({name, email:username, password }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            alert('Signup successful! Please login.');
+            window.location.href = '/login.html'; // Redirect to login
+          } else {
+            alert(data.message || 'Signup failed!');
+          }
+        })
+        .catch(err => console.error(err));
+    }
+  </script>
+</body>
+</html>
